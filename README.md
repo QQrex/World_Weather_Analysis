@@ -10,7 +10,7 @@ PlanMyTrip app would like us to refactor their code to add weather description t
 
 - Create a Customer Travel Destination Map with desription added to pop-up markers.
 
-- Create a Travel Itineary Map using Google maps.
+- Create a Travel Itineary Map and mark layer map using Google maps.
 
 ## Analysis
 
@@ -116,3 +116,42 @@ Finally, we need to we need to set up our info box template with the variables h
 
 **[Travel Itineary Map]**
 
+The final two items is to create is a travel itineary map and a marker layered map of 3 travel locations. We will once again start in a new file so we will import our dependencies again and load our WeatherPy_vacation.csv.
+
+![depvacationdata](https://github.com/QQrex/World_Weather_Analysis/blob/main/Resources/dep%2C%20load%20vacation%20data.PNG)
+
+Next, we want to recreate our Travel Destination map and pick 3 locations we would like to travel to and back.
+
+![refactor](https://github.com/QQrex/World_Weather_Analysis/blob/main/Resources/deli%202%20refactor.PNG)
+>Reuse our code from our previous file.
+
+Once we decide the locations we would like to travel to, we need to pull the information from our DataFrame and add it to waypoint variables. We also need to take the lat and lng of each city and create a tuple pair as coordinates. Finally, we will create our travel itineary map of our 3 destinations.
+
+![travel](https://github.com/QQrex/World_Weather_Analysis/blob/main/Resources/travel%20cities%20AU.PNG)
+>Cell 1 - Using .loc to pull information from our vacation_df of our travel locations.
+>
+>Cell 2 - Using to_numpy() to create a lat and lng pair as a tuple.
+>
+>Cell 3 - Create a Google map figure of our travel destinations.
+
+To create the our travel marker layered map, we need to concatenate our travel locations into a DataFrame and reuse our code from when we created a layered map again.
+
+![traveldes](https://github.com/QQrex/World_Weather_Analysis/blob/main/Resources/gmap%20of%20travel%20des.PNG)
+>Cell 1 - Concatenate our waypoints into one DataFrame.
+>
+>Cell 2 and 3 - Reused code to create mark layered map.
+
+## Results
+
+![vacationmap](https://github.com/QQrex/World_Weather_Analysis/blob/main/Vacation_Search/WeatherPy_vacation_map.png)
+>WeatherPy vacation map.
+
+![travelmap](https://github.com/QQrex/World_Weather_Analysis/blob/main/Vacation_Itinerary/WeatherPy_travel_map.png)
+>WeatherPy travel itineary map.
+
+![travelmapmarker](https://github.com/QQrex/World_Weather_Analysis/blob/main/Vacation_Itinerary/WeatherPy_travel_map_markers.png)
+>WeatherPy travel map with markers.
+
+## Summary
+
+In summary, the script we wrote will allow PlanMyTrip app customers to search possible travel locations on a map, depending on temperature preference, with description markers. From the possible travel locations, the customers can pick 3 locations to travel to and back as well.
